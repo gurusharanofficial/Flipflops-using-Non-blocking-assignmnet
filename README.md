@@ -78,7 +78,7 @@ endmodule
 ```
 #### SIMULATION OUTPUT
 
-<img width="1914" height="1199" alt="image" src="https://github.com/user-attachments/assets/88c08651-1c04-4064-8a69-a10e8ddf1356" />
+<img width="1918" height="1190" alt="image" src="https://github.com/user-attachments/assets/9268bbe5-fa72-42a2-a963-9b0c0e7e3b1f" />
 
 ---
 
@@ -103,10 +103,6 @@ end
 end
 endmodule
 
-
-
-
-endmodule
 ```
 ### JK Flip-Flop Test bench 
 ```verilog
@@ -127,13 +123,10 @@ clk = 0; J = 0; K = 0; reset = 1;
 #20 $finish;
 end
 endmodule
-
-
-
 ```
 #### SIMULATION OUTPUT
 
-<img width="1918" height="1198" alt="image" src="https://github.com/user-attachments/assets/c4821ebe-3864-49fd-b6ac-a7b7f170422f" />
+<img width="1899" height="1183" alt="image" src="https://github.com/user-attachments/assets/cfeee320-c89b-4888-b6ec-fd8879457d98" />
 
 ---
 ### D Flip-Flop (Non Blocking)
@@ -143,7 +136,6 @@ endmodule
 module Dflipflop(D, clk, reset, Q);
 input D, clk, reset;
 output reg Q;
-
 always @ (posedge clk) begin
 if (reset == 1)
 Q <= 0;        
@@ -159,7 +151,6 @@ reg D, clk, reset;
 wire Q;
 Dflipflop UUT (D, clk, reset, Q);
   always #5 clk = ~clk;
-
 initial begin
 clk = 0; D = 0; reset = 1;
 #10 reset = 0;
@@ -169,7 +160,6 @@ clk = 0; D = 0; reset = 1;
 #10 D = 1;   
 #10 D = 0;   
 #10 D = 1;   
-
 #20 $finish;
 end
 endmodule
@@ -178,13 +168,12 @@ endmodule
 ```
 
 #### SIMULATION OUTPUT
-<img width="1918" height="1199" alt="image" src="https://github.com/user-attachments/assets/37ccaa11-05d3-450b-bb2f-5aa8306ca986" />
+<img width="1905" height="1192" alt="image" src="https://github.com/user-attachments/assets/226b6896-70c0-48b7-bd7b-b75a74558481" />
 
 ---
 ### T Flip-Flop (Non Blocking)
 ```verilog
 `timescale 1ns / 1ps
-
 module Tflipflop(T, clk, reset, Q);
   input T, clk, reset;
   output reg Q;
@@ -198,44 +187,30 @@ module Tflipflop(T, clk, reset, Q);
       Q <= Q;          
   end
 endmodule
-
-
-
 ```
+
 ### T Flip-Flop Test bench 
 ```verilog
 module tb_tff;
   reg T, clk, reset;
   wire Q;
-
-  
   Tflipflop UUT (T, clk, reset, Q);
-
-  
   always #5 clk = ~clk;
-
   initial begin
-    
     clk = 0; T = 0; reset = 1;
-
-   
-    #10 reset = 0;
-
-    
+    #10 reset = 0;    
     #10 T = 1;   
     #20 T = 0;   
     #20 T = 1;   
     #20 T = 0;  
-
     #20 $finish;
   end
 endmodule
-
-
 ```
 
 #### SIMULATION OUTPUT
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/0c5a5ab1-e7a5-4a22-82fe-1ac31371ca60" />
+<img width="1912" height="1186" alt="image" src="https://github.com/user-attachments/assets/4d4e2683-b163-499a-9a22-c2339cc6bb1d" />
+
 
 
 ---
